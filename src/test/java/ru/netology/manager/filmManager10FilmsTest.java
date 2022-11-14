@@ -43,14 +43,23 @@ public class filmManager10FilmsTest {
         Film[] expected = new Film[]{
                 eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first
         };
-        Film[] actual = manager.getLast10Films();
+        Film[] actual = manager.getALLFilms();
         assertArrayEquals(expected, actual);
 
     }
 
     @Test
     public void shouldGetAll() {
-        Film[] actual = manager.getLast10Films();
+        Film[] actual = manager.findLast();
+        Film[] expected = {
+                tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second
+        };
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnLast9Films() {
+        Film[] actual = manager.getALLFilms();
         Film[] expected = {
                 tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first
         };
